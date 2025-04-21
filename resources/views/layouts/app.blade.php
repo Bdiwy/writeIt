@@ -16,7 +16,6 @@
     <link rel="icon" href="{{ asset('imgs/favicon_guest.ico') }}" type="image/x-icon">
     @endguest
     @auth
-
     <link rel="icon" href="{{ asset('imgs/favicon_auth.ico') }}" type="image/x-icon">
     @endauth
 
