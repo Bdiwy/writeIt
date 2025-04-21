@@ -11,6 +11,15 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    {{-- fivicon --}}
+    @guest   
+    <link rel="icon" href="{{ asset('imgs/favicon_guest.ico') }}" type="image/x-icon">
+    @endguest
+    @auth
+
+    <link rel="icon" href="{{ asset('imgs/favicon_auth.ico') }}" type="image/x-icon">
+    @endauth
+
 </head>
 <body>
     <!-- Include Navbar -->
