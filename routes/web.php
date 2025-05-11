@@ -3,20 +3,12 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
-Route::get('/login', function () {
-    return view('auth.login');
-})->name('login');
+// Auth routes
+Route::middleware('guest')->group(function () {
+    Route::get('/register', [AuthController::class, 'showRegister'])->name('show.register');
+    Route::get('/login', [AuthController::class, 'showLogin'])->name('show.login');
+    Route::post('/register', [AuthController::class, 'register'])->name('register');
+    Route::post('/login', [AuthController::class, 'login'])->name('login');
+});
 
-Route::get('/register', function () {
-    return view('auth.register');
-})->name('register');
-
-Route::post('/register', [AuthController::class , 'create'])->name('register');
-
-
-Route::get('/about', function () {
-    return view('about');
-})->name('about');
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
