@@ -1,7 +1,7 @@
 <?php
+namespace App\Http\Controllers\Auth;
 
-namespace App\Http\Controllers;
-
+use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -29,11 +29,13 @@ class AuthController extends Controller
 
         $validated['password'] = Hash::make($validated['password']);
 
-        $user = User::create($validated);
-
-        Auth::login($user);
-
-        return redirect()->route('ninjas.index');
+        try {
+            $user = User::create($validated);
+            Auth::login($user);
+            return redirect()->route('ninjas.index');
+        } catch (\Exception $e) {
+            return back()->withErrors(['error' => 'Registration failed. Please try again.']);
+        }
     }
 
     public function login(Request $request)
