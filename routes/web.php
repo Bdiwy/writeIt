@@ -7,7 +7,6 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
-// Auth routes
 Route::middleware('guest')->group(function () {
     Route::get('/register', [AuthController::class, 'showRegister'])->name('show.register');
     Route::get('/login', [AuthController::class, 'showLogin'])->name('show.login');
