@@ -2,9 +2,13 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
+use Illuminate\Support\Facades\Auth;
+
 
 Route::get('/', function () {
-    return view('home');
+    return Auth::check()
+        ? view('feed')    
+        : view('home');  
 })->name('home');
 
 Route::middleware('guest')->group(function () {

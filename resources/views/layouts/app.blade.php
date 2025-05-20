@@ -18,21 +18,30 @@
     @auth
     <link rel="icon" href="{{ asset('imgs/favicon_auth.ico') }}" type="image/x-icon">
     @endauth
+    @yield('style')
 
 </head>
 <body>
     <!-- Include Navbar -->
+    
+    @guest   
     @include('partials.navbar')
+    @endguest
+    @auth
+    @include('partials.navbar-Authed')    
+    @endauth
+
 
     <!-- Dynamic Content -->
     @yield('content')
 
     
+    @guest   
     <!-- Include Contact Modal -->
-    @include('partials.contact-modal')
-    
+    @include('partials.contact-modal')  
     <!-- Include Footer -->
     @include('partials.footer')
+    @endguest
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
