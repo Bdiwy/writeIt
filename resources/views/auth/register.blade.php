@@ -4,8 +4,8 @@
     <!-- Main Content -->
     <div class="container justify-content-center align-items-center" style="min-height: 80vh;">
         <div class="row justify-content-center">
-            <div class="col-6">
-                <div class="card mt-5">
+            <div class="col-6 p-3">
+                <div class="card mt-7">
                     <div class="card-header bg-success text-white text-center">
                         <h3>Create a Writeit Account</h3>
                     </div>
