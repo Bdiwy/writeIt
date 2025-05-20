@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-md-6 mb-3">
             <label class="form-label">Gender</label>
-            <select class="form-select">
+            <select class="form-select" name="gender">
                 <option selected disabled>Select your gender</option>
                 <option value="m">Male</option>
                 <option value="f">Female</option>
@@ -11,12 +11,12 @@
         </div>
         <div class="col-md-6 mb-3">
             <label class="form-label">Age</label>
-            <input type="number" class="form-control" min="13" max="120">
+            <input type="number" class="form-control" name="age" min="13" max="120">
         </div>
     </div>
     <div class="mb-3">
         <label class="form-label">Bio (Optional)</label>
-        <textarea class="form-control" rows="3" placeholder="Tell us about yourself..."></textarea>
+        <textarea class="form-control" rows="3" name="bio" placeholder="Tell us about yourself..."></textarea>
     </div>
     <div class="d-flex justify-content-between mt-4">
         <button class="btn btn-outline-secondary"
