@@ -1,22 +1,23 @@
 let filename = null ;
 let selectedInterests = null ;
 let personalData= null ;
-// Avatar selection
-    document.querySelectorAll('.avatar-option').forEach(avatar => {
-        avatar.addEventListener('click', function() {
-            document.querySelectorAll('.avatar-option').forEach(a => a.classList.remove('selected'));
-            this.classList.add('selected');
-            filename = src.substring(src.lastIndexOf('/') + 1);
-        });
+
+document.querySelectorAll('.avatar-option').forEach(avatar => {
+    avatar.addEventListener('click', function() {
+        document.querySelectorAll('.avatar-option').forEach(a => a.classList.remove('selected'));
+        this.classList.add('selected');
+        const src = this.getAttribute('src');
+        filename = src.substring(src.lastIndexOf('/') + 1);
     });
-    // Interest selection
-    document.querySelectorAll('.interest-tag').forEach(tag => {
+});
+
+document.querySelectorAll('.interest-tag').forEach(tag => {
         tag.addEventListener('click', function() {
             this.classList.toggle('selected');
         });
-    });
-    // Form navigation
-    function nextSection(currentId, nextId) {
+});
+
+function nextSection(currentId, nextId) {
         document.getElementById(currentId).classList.remove('active');
         document.getElementById(nextId).classList.add('active');
         if(currentId === 'interestsSection') {
@@ -25,28 +26,53 @@ let personalData= null ;
             personalData = getPersonalData();
         }
         updateProgressBar(nextId);
-    }
-    function prevSection(currentId, prevId) {
+}
+
+function prevSection(currentId, prevId) {
         document.getElementById(currentId).classList.remove('active');
         document.getElementById(prevId).classList.add('active');
         updateProgressBar(prevId);
-    }
-    // Update progress bar
-    function updateProgressBar(currentSection) {
+}
+
+function updateProgressBar(currentSection) {
         let progress = 25;
         if (currentSection === 'personalSection') progress = 50;
         if (currentSection === 'interestsSection') progress = 75;
         document.getElementById('profileProgress').style.width = progress + '%';
-    }
-    
-    function getSelectedInterests() {
+}
+
+function getSelectedInterests() {
         const selectedTags = document.querySelectorAll('.interest-tag.selected');
         const interests = Array.from(selectedTags).map(tag => tag.textContent.trim());
         return interests; 
-    }
+}
     
-    // Complete profile
-    function completeProfile() {
-        fetch
-        alert('Profile completed successfully! Redirecting to your dashboard...');
-    }
+function completeProfile() {
+        const profileData = {
+                filename,
+                selectedInterests,
+                personalData,
+            };
+
+        fetch('/api/complete-profile', {
+                method: 'POST',
+                headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                },
+                body: JSON.stringify(profileData)
+        })
+        .then(res => res.json())
+        .then(data => {
+            if(data.success) {
+                alert('Profile completed successfully!');
+                    window.location = "/";
+            } else {
+                alert('Something went wrong.');
+            }
+        })
+        .catch(err => {
+                console.error(err);
+                alert('Failed to send data.');
+        });
+}
