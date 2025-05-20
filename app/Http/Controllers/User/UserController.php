@@ -11,7 +11,7 @@ class UserController extends Controller
 {
     public function showCompleteProfile()
     {
-        return view("pages.compleate.index");
+        return view("pages.compleate-profile.index");
     }
 
 }

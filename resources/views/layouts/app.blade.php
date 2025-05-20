@@ -23,14 +23,16 @@
 </head>
 <body>
     <!-- Include Navbar -->
-    
-    @guest   
-    @include('partials.navbar')
-    @endguest
-    @auth
-    @include('partials.navbar-Authed')    
-    @endauth
-
+    @hasSection('hide-navbar')
+    {{-- Do not include any navbar --}}
+    @else
+        @guest
+            @include('partials.navbar')
+        @endguest
+        @auth
+            @include('partials.navbar-Authed')    
+        @endauth
+    @endif
 
     <!-- Dynamic Content -->
     @yield('content')
