@@ -32,7 +32,7 @@ class AuthController extends Controller
         try {
             $user = User::create($validated);
             Auth::login($user);
-            return redirect()->route('ninjas.index');
+            return redirect()->route('/');
         } catch (\Exception $e) {
             return back()->withErrors(['error' => 'Registration failed. Please try again.']);
         }
@@ -47,7 +47,7 @@ class AuthController extends Controller
 
         if (Auth::attempt($validated)) {
             $request->session()->regenerate();
-            return redirect()->route('ninjas.index');
+            return redirect()->route('/');
         }
 
         return back()->withErrors([

@@ -10,9 +10,9 @@
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     {{-- fivicon --}}
     @guest   
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="icon" href="{{ asset('imgs/favicon_guest.ico') }}" type="image/x-icon">
     @endguest
     @auth
@@ -45,6 +45,7 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    @vite(['resources/js/app.js'])
     <!-- Custom Scripts -->
     @yield('scripts')
 </body>
