@@ -40,5 +40,5 @@
 
     @endsection
     @section('scripts')
-    <script src="{{asset("js/comleate-profile/main.js")}}"></script>
+    <script src="{{asset("js/compleate-profile/main.js")}}"></script>
     @endsection
