@@ -126,5 +126,5 @@
 @endsection
 
 @section('scripts')
-<script src="{{asset("js/feed.js")}}"></script>
+<script src="{{asset("js/feed/main.js")}}"></script>
 @endsection

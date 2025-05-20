@@ -1,12 +1,13 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
-use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\User\UserController;
 
 Route::get('/', function () {
     return Auth::check()
-        ? view('feed')    
+        ? view('pages.feed.index')    
         : view('home');  
 })->name('home');
 
@@ -18,3 +19,8 @@ Route::controller(AuthController::class)->middleware('guest')->group(function ()
 });
 
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
+
+
+Route::controller(UserController::class)->middleware('auth')->group(function () {
+    Route::get('/complete/profile', 'showCompleteProfile')->name('show.CompleteProfile');
+});

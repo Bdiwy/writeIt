@@ -32,7 +32,7 @@ class AuthController extends Controller
         try {
             $user = User::create($validated);
             Auth::login($user);
-            return redirect()->route('/');
+            return redirect()->route("show.CompleteProfile");
         } catch (\Exception $e) {
             return back()->withErrors(['error' => 'Registration failed. Please try again.']);
         }
