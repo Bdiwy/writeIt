@@ -17,6 +17,10 @@ class UserSetting extends Model
         'gender',
         'bio',
     ];
+    
+    protected $casts = [
+            'interests' => 'array',   
+    ];
 
     public function user()
     {
