@@ -9,9 +9,9 @@
                 </div>
                 <div class="modal-body">
                     <div class="d-flex mb-3">
-                        <img src="/imgs/avatar/7309681.jpg" class="profile-img me-3">
+                        <img src="{{Auth::user()->avatar_url}}" class="profile-img me-3">
                         <div>
-                            <h6 class="mb-0">Ahmed Bdiwy</h6>
+                            <h6 class="mb-0">{{Auth::user()->name}}</h6>
                             <select class="form-select form-select-sm mt-1" style="width: auto; display: inline-block;">
                                 <option><i class="bi bi-globe"></i> Public</option>
                                 <option><i class="bi bi-people-fill"></i> Friends</option>

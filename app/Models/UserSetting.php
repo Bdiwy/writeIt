@@ -18,10 +18,6 @@ class UserSetting extends Model
         'bio',
     ];
 
-    protected $casts = [
-        'interests' => 'array',
-    ];
-
     public function user()
     {
         return $this->belongsTo(User::class);

@@ -44,7 +44,7 @@
                 <!-- Profile Dropdown -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="{{ asset('imgs/avatar/3.jpg') }}" class="profile-img" alt="Profile">
+                        <img src="{{ Auth::user()->avatar_url }}" class="profile-img" alt="Profile">
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="{{ url('profile') }}"><i class="bi bi-person me-2"></i> Profile</a></li>

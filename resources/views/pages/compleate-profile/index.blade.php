@@ -26,6 +26,7 @@
             <div class="col-lg-8">
                 <div class="card shadow">
                     <div class="card-body p-5">
+                        <meta name="csrf-token" content="{{ csrf_token() }}">
                         <!-- Avatar Selection Section -->
                         @include('pages.compleate-profile.avatar')
                         <!-- Personal Information Section -->

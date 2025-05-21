@@ -13,9 +13,9 @@
             <div class="card mb-4">
                 <div class="card-body">
                     <div class="d-flex mb-3">
-                        <img src="/imgs/avatar/3.jpg" class="profile-img me-3">
+                        <img src="{{Auth::user()->avatar_url}}" class="profile-img me-3">
                         <button class="create-post-btn" data-bs-toggle="modal" data-bs-target="#createPostModal">
-                            What's on your mind, Ahmed?
+                            What's on your mind, {{Auth::user()->name}}?
                         </button>
                     </div>
                     <hr class="my-2">

@@ -18,6 +18,8 @@ class User extends Authenticatable
      *
      * @var list<string>
      */
+    protected $with = ['settings'];
+
     protected $fillable = [
         'name',
         'email',
@@ -60,6 +62,31 @@ class User extends Authenticatable
             && $settings->avatar
             && $settings->gender
             && $settings->bio;
+    }
+
+    public function getAvatarAttribute()
+    {
+        return $this->settings->avatar ?? 'default.png';
+    }
+
+    public function getAvatarUrlAttribute()
+    {
+        return asset('imgs/avatar/' . $this->avatar);
+    }
+
+    public function getGenderAttribute()
+    {
+        return $this->settings->gender ?? null;
+    }
+
+    public function getBioAttribute()
+    {
+        return $this->settings->bio ?? null;
+    }
+
+    public function getInterestsAttribute()
+    {
+        return $this->settings->interests ?? [];
     }
 
 }
