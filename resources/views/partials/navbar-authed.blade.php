@@ -47,8 +47,8 @@
                         <img src="{{ Auth::user()->avatar_url }}" class="profile-img" alt="Profile">
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="{{ url('profile') }}"><i class="bi bi-person me-2"></i> Profile</a></li>
-                        <li><a class="dropdown-item" href="{{ url('settings') }}"><i class="bi bi-gear me-2"></i> Settings</a></li>
+                        <li><a class="dropdown-item" href="{{ route('show.Profile') }}"><i class="bi bi-person me-2"></i> Profile</a></li>
+                        <li><a class="dropdown-item" href="{{ route('show.SettingsProfile') }}"><i class="bi bi-gear me-2"></i> Settings</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="{{ route('logout') }}"><i class="bi bi-box-arrow-right me-2"></i> Logout</a></li>
                     </ul>

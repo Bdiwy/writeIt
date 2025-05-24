@@ -33,6 +33,9 @@
                         @include('pages.compleate-profile.personal-info')
                         <!-- Interests Section -->
                         @include('pages.compleate-profile.intersts')
+                        <!-- Models Section-->
+                        @include('components.modals.success-model')
+                        @include('components.modals.faild-model')
                     </div>
                 </div>
             </div>

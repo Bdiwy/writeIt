@@ -121,7 +121,7 @@
     </div>
 </div>
 
-@include('components.models.create-post')
+@include('components.modals.create-post')
 
 @endsection
 

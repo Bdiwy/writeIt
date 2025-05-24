@@ -61,6 +61,11 @@ function getPersonalData() {
     };
 }
 
+function showModalWithMessage(ModalId , MessageElementById , Message){
+        $(MessageElementById).text(Message);
+        $(ModalId).modal('show');
+}
+
 function completeProfile() {
     selectedInterests = getSelectedInterests();
     const profileData = {
@@ -78,17 +83,17 @@ function completeProfile() {
         },
         body: JSON.stringify(profileData)
     })
-        .then(res => res.json())
-        .then(data => {
-            if (data.success) {
-                alert('Profile completed successfully!');
-                window.location = "/";
-            } else {
-                alert('Something went wrong.');
-            }
-        })
-        .catch(err => {
-            console.error(err);
-            alert('Failed to send data.');
-        });
+    .then(res => res.json())
+    .then(data => {
+        if (data.success) {
+            showModalWithMessage("#successModal","#SuccessMessageElementById","Profile completed successfully!");
+            window.location = "/";
+        } else {
+            showModalWithMessage("#faildModal","#FaildMessageElementById","Something went wrong.");
+        }
+    })
+    .catch(err => {
+        console.error(err);
+        showModalWithMessage("#faildModal","#FaildMessageElementById","Failed to send data.");
+    });
 }

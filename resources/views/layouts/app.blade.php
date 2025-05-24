@@ -6,8 +6,9 @@
     <title>{{ $title ?? 'Writeit' }}</title>
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset("lib/css/bootstrap.min.css")}}">
     <!-- Bootstrap Icons -->
+    {{-- <link rel="stylesheet" href="{{asset("lib/css/bootstrap-icons.min.css")}}"> --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!-- Custom CSS -->
     {{-- fivicon --}}
@@ -46,7 +47,8 @@
     @endguest
 
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{asset("lib/js/bootstrap.bundle.min.js")}}"></script>
+    <script src="{{asset("lib/js/jquery-3.6.0.min.js")}}"></script>
     @vite(['resources/js/app.js'])
     <!-- Custom Scripts -->
     @yield('scripts')

@@ -15,7 +15,6 @@ Route::get('/', function () {
     return view('pages.feed.index');
 })->middleware(['auth.optional', EnsureProfileIsComplete::class])->name('home');
 
-// Auth Routes for Guests
 Route::controller(AuthController::class)->middleware('guest')->group(function () {
     Route::get('/register', 'showRegister')->name('show.register');
     Route::get('/login', 'showLogin')->name('show.login');
@@ -26,7 +25,12 @@ Route::controller(AuthController::class)->middleware('guest')->group(function ()
 // Logout
 Route::get('/logout', [AuthController::class, 'logout'])->middleware('auth')->name('logout');
 
-// Profile Completion Page (auth only, no profile check)
-Route::get('/complete/profile', [UserController::class, 'showCompleteProfile'])
-    ->middleware('auth')
-    ->name('show.CompleteProfile');
+Route::controller(UserController::class)->middleware('auth')->group(function () {
+    Route::get('/complete/profile',  'showCompleteProfile')
+        ->name('show.CompleteProfile');
+    Route::get('/settings',  'showSettingsProfile')
+        ->name('show.SettingsProfile');
+    Route::get('/Profile',  'showProfile')
+        ->name('show.Profile');
+});
+
