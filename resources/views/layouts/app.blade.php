@@ -18,6 +18,7 @@
     @endguest
     @auth
     <link rel="icon" href="{{ asset('imgs/favicon_auth.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{asset("css/feed/style.css")}}">
     @endauth
     @yield('style')
 

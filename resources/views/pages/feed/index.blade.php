@@ -1,7 +1,4 @@
 @extends('layouts.app')
-@section('style')
-<link rel="stylesheet" href="{{asset("css/feed/style.css")}}">
-@endsection
 
 @section('content')
 

@@ -1,7 +1,9 @@
 @extends('layouts.app')
+
 @section('hide-navbar', true)
+
 @section('style')
-<link rel="stylesheet" href="{{asset("css/compleate-profile/style.css")}}">
+    <link rel="stylesheet" href="{{asset("css/compleate-profile/style.css")}}">
 @endsection
 
 @section('content')
@@ -42,7 +44,8 @@
         </div>
     </div>
 
-    @endsection
-    @section('scripts')
+@endsection
+
+@section('scripts')
     <script src="{{asset("js/compleate-profile/main.js")}}"></script>
-    @endsection
+@endsection
