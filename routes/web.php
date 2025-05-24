@@ -34,3 +34,6 @@ Route::controller(UserController::class)->middleware('auth')->group(function () 
         ->name('show.Profile');
 });
 
+Route::get('about', function () {
+    return view('pages.about.index');
+})->name('about');

@@ -1,7 +1,7 @@
 <!-- Navigation Bar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-success">
     <div class="container">
-        <a class="navbar-brand" href="{{ url('index') }}">
+        <a class="navbar-brand" href="{{ route('home') }}">
             <img src="{{ asset('imgs/logo.png') }}" alt="Writeit Logo" class="logo-img">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,7 +13,7 @@
                     <a class="nav-link" href="{{ url('index') }}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="{{ url('feed') }}">Feed</a>
+                    <a class="nav-link active" href="{{ route('home') }}">Feed</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('explore') }}">Explore</a>

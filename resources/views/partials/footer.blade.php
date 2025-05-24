@@ -4,7 +4,7 @@
             <!-- About Website -->
             <div class="col-md-4 mb-4">
                 <h5 class="text-dark mb-3">About Writeit</h5>
-                <p>A platform for sharing ideas, stories, and knowledge. Writeit connects readers with quality content across various topics including technology, lifestyle, and learning.</p>
+                <p>A platform for sharing ideas, stories, and knowledge. Writeit connects readers with quality content across various topics including technology, lifestyle, and learning , Read More <small style="background-color: chartreuse"><a href="{{route("about")}}">Click Here</a></small> .</p>
             </div>
             <!-- About Me -->
             <div class="col-md-4 mb-4">
