@@ -15,10 +15,10 @@
                     <a class="nav-link {{ request()->is('about') ? 'active' : '' }}" href="{{ route('about') }}">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->is('show.login') ? 'active' : '' }}" href="{{ url('/login') }}">Login</a>
+                    <a class="nav-link {{ request()->is('login') ? 'active' : '' }}" href="{{ route('show.login') }}">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->is('show.register') ? 'active' : '' }}" href="{{ url('/register') }}">Register</a>
+                    <a class="nav-link {{ request()->is('register') ? 'active' : '' }}" href="{{ route('show.register') }}">Register</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#contactModal">Contact</a>
