@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\UserSettings\Services\UserSettingService;
+use App\Http\Controllers\UserSettings\Requests\UpdateSettingRequest;
 
 class UserSettingController extends Controller
 {
@@ -18,7 +19,6 @@ class UserSettingController extends Controller
 
     public function completeProfile(Request $request)
     {
-        Log::info("asdsadas");
         $user = auth()->user();
         
         if (!$user) {
@@ -36,5 +36,19 @@ class UserSettingController extends Controller
         $result = $this->userSettingService->saveSettings($data);
 
         return response()->json(['success' => $result]);
+    }
+
+    public function updateSettings(UpdateSettingRequest $request)
+    {
+        $user = auth()->user();
+        if (!$user) {
+            return response()->json(['error' => 'Unauthorized'], 401);
+        }
+        $data = [
+            'user_id' => $user->id,
+            'username' => $request->input('username'),
+            'email' => $request->input('email'),
+        ];
+        $result = $this->userSettingService->updateSettings($data);
     }
 }

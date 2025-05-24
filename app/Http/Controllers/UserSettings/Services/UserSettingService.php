@@ -16,7 +16,11 @@ class UserSettingService
 
     public function saveSettings(array $data): bool
     {
-        Log::alert("message");
         return $this->userSettingRepo->createOrUpdate($data);
+    }
+
+    public function updateSettings(array $data): bool
+    {
+        return $this->userSettingRepo->updateSettings($data);
     }
 }

@@ -30,37 +30,7 @@
             </div>
 
             <!-- Update/Delete Form -->
-            <div class="col-md-6 mb-4">
-                <div class="card">
-                    <div class="card-header bg-success text-white">
-                        <h3 class="mb-0">Update Your Details</h3>
-                    </div>
-                    <div class="card-body">
-                        <form enctype="multipart/form-data">
-                            <div class="mb-3">
-                                <label for="avatar" class="form-label">Profile Avatar</label>
-                                <input type="file" class="form-control" id="avatar" accept="image/*">
-                            </div>
-                            <div class="mb-3">
-                                <label for="username" class="form-label">Username</label>
-                                <input type="text" class="form-control" id="username" value="{{Auth::user()->name}}" placeholder="Enter new username">
-                                <div class="invalid-feedback">Please provide a valid username.</div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="email" value="{{Auth::user()->email}}" placeholder="Enter new email">
-                                <div class="invalid-feedback">Please provide a valid email.</div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="password" class="form-label">New Password</label>
-                                <input type="password" class="form-control" id="password" placeholder="Enter new password">
-                            </div>
-                            <button type="submit" class="btn btn-success w-100 mb-3">Update Profile</button>
-                        </form>
-                        <button class="btn btn-danger w-100" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete Account</button>
-                    </div>
-                </div>
-            </div>
+            @include('pages.settings.form')
         </div>
     </div>
 
@@ -86,4 +56,5 @@
 
 @section('scripts')
 <script src="{{asset("js/settings/main.js")}}"></script>
+<script src="{{asset("js/settings/submit-form.js")}}"></script>
 @endsection
