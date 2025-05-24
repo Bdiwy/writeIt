@@ -13,9 +13,18 @@
                     </div>
                     <div class="card-body text-center">
                         <img src="{{Auth::user()->avatar_url}}" class="rounded-circle mb-3" alt="Profile Avatar" style="width: 100px; height: 100px;">
-                        <p><strong>Username:</strong> {{Auth::user()->name}}</p>
-                        <p><strong>Email:</strong> {{Auth::user()->email}}</p>
-                        <p><strong>Joined:</strong> {{Auth::user()->created_at->format("Y m d")}}</p>
+                        <div class="d-flex justify-content-center">
+                            <strong>Username:&nbsp;</strong>
+                            <p id="updateUsreName"> {{Auth::user()->name}}</p>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                                <strong>Email:&nbsp;</strong>
+                                <p id="updateEmail"> {{Auth::user()->email}}</p>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                                <strong>Joined:&nbsp;</strong>
+                                <p> {{Auth::user()->created_at->format("Y m d")}}</p>
+                        </div>                        
                     </div>
                 </div>
             </div>
@@ -35,10 +44,12 @@
                             <div class="mb-3">
                                 <label for="username" class="form-label">Username</label>
                                 <input type="text" class="form-control" id="username" value="{{Auth::user()->name}}" placeholder="Enter new username">
+                                <div class="invalid-feedback">Please provide a valid username.</div>
                             </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
                                 <input type="email" class="form-control" id="email" value="{{Auth::user()->email}}" placeholder="Enter new email">
+                                <div class="invalid-feedback">Please provide a valid email.</div>
                             </div>
                             <div class="mb-3">
                                 <label for="password" class="form-label">New Password</label>
@@ -71,4 +82,8 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('scripts')
+<script src="{{asset("js/settings/main.js")}}"></script>
 @endsection
