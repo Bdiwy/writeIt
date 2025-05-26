@@ -22,7 +22,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="password" class="form-label">New Password</label>
-                    <input type="password" class="form-control" id="password" placeholder="Enter new password">
+                    <input type="password" class="form-control" name="password" id="password" placeholder="Enter new password">
                 </div>
                 <button type="submit" class="btn btn-success w-100 mb-3" id="submitButton">Update Profile</button>
             </form>

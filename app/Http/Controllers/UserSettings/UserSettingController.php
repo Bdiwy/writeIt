@@ -51,8 +51,9 @@ class UserSettingController extends Controller
 
         $data = [
             'user_id' => $user->id,
-            'name' => $request->input('name'),
-            'email' => $request->input('email'),
+            'name' => $request->input('name') ?? Null,
+            'email' => $request->input('email') ?? Null,
+            'password' => $request->input('password') ?? Null ,
             'avatar' => $avatarPath ?? Null,
         ];
         $result = $this->userSettingService->updateSettings($data);

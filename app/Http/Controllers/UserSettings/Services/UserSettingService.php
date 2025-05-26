@@ -41,7 +41,6 @@ class UserSettingService
         $filteredData = array_filter($data, function ($value) {
             return !is_null($value);
         });
-
         return $this->userSettingRepo->updateSettings($filteredData);
     }
 }

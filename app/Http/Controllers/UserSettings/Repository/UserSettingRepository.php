@@ -4,6 +4,7 @@ namespace App\Http\Controllers\UserSettings\Repository;
 use App\Models\User;
 use App\Models\UserSetting;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Hash;
 
 class UserSettingRepository
 {
@@ -29,6 +30,7 @@ class UserSettingRepository
         $user->update([
             'name' => $data['name'],
             'email' => $data['email'],
+            'password'=> Hash::make($data['password']) ,
         ]);
 
         $userSetting = $user->settings; 

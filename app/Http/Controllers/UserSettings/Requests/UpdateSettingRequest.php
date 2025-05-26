@@ -21,8 +21,8 @@ class UpdateSettingRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'email' => 'required|email|unique:users',
-            'name' => 'required',
+            'email' => 'sometimes|email|unique:users',
+            'name' => 'sometimes',
             'avatar' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ];
     }
