@@ -1,0 +1,48 @@
+@extends('layouts.app')
+
+@section('content')
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+<!-- Posts -->
+            <div class="card mb-4">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between mb-3">
+                        <div class="d-flex">
+                            <img src="/imgs/avatar/8.jpg" class="profile-img me-3">
+                            <div>
+                                <h5 class="mb-0">Fuck yeah</h5>
+                                <small class="text-muted">8 hours ago · <i class="bi bi-globe"></i></small>
+                            </div>
+                        </div>
+                        <div>
+                            <button class="btn btn-sm btn-light rounded-circle">
+                                <i class="bi bi-three-dots"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <p class="mb-3">it is what it is </p>
+
+                    <img src="/imgs/test.png" class="img-fluid rounded mb-3 w-100">
+
+                    <!-- Post Actions -->
+                    <div class="post-actions">
+                        <button class="vote-btn upvote" onclick="vote(this, 1)">
+                            <i class="bi bi-arrow-up"></i>
+                        </button>
+                        <span class="vote-count">42</span>
+                        <button class="vote-btn downvote" onclick="vote(this, -1)">
+                            <i class="bi bi-arrow-down"></i>
+                        </button>
+                        <button class="share-btn" onclick="sharePost(this)">
+                            <i class="bi bi-repeat"></i>
+                        </button>
+                        <a href="#" class="btn btn-success ms-auto">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection

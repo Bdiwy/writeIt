@@ -22,6 +22,6 @@ class UserController extends Controller
 
     public function showProfile()
     {
-        return view("");
+        return view("pages.profile.index");
     }
 }

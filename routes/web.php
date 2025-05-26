@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Middleware\EnsureProfileIsComplete;
+use App\Http\Controllers\Explore\ExploreController;
 
 // Public or Feed Page at '/'
 Route::get('/', function () {
@@ -33,6 +34,12 @@ Route::controller(UserController::class)->middleware('auth')->group(function () 
     Route::get('/Profile',  'showProfile')
         ->name('show.Profile');
 });
+
+Route::controller(ExploreController::class)->middleware('auth')->group(function () {
+    Route::get('/explore',  'showExplore')
+        ->name('show.showExplore');
+});
+
 
 Route::get('about', function () {
     return view('pages.about.index');

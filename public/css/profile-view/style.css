@@ -1,0 +1,27 @@
+
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+.stats-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+.stat-item {
+    text-align: center;
+    cursor: pointer;
+}
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #198754; /* Bootstrap success color */
+}
+.stat-label {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
