@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\UserSettings;
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\UserSettings\Services\UserSettingService;
@@ -46,9 +45,11 @@ class UserSettingController extends Controller
         }
         $data = [
             'user_id' => $user->id,
-            'username' => $request->input('username'),
+            'name' => $request->input('name'),
             'email' => $request->input('email'),
         ];
         $result = $this->userSettingService->updateSettings($data);
+        return $result ; 
     }
+
 }

@@ -12,13 +12,13 @@
                 </div>
                 <div class="mb-3">
                     <label for="name" class="form-label">Name</label>
-                    <input type="text" class="form-control" name="name" id="Name" value="{{Auth::user()->name}}" placeholder="Enter new name">
-                    <div class="invalid-feedback">Please provide a valid name.</div>
+                    <input type="text" class="form-control" name="name" id="name" value="{{Auth::user()->name}}" placeholder="Enter new name">
+                    <div class="invalid-feedback nameMessageError">Please provide a valid name.</div>
                 </div>
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
                     <input type="email" class="form-control" name="email" id="email" value="{{Auth::user()->email}}" placeholder="Enter new email">
-                    <div class="invalid-feedback">Please provide a valid email.</div>
+                    <div class="invalid-feedback emailMessageError">Please provide a valid email.</div>
                 </div>
                 <div class="mb-3">
                     <label for="password" class="form-label">New Password</label>

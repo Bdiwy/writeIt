@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\UserSettings\Repository;
+use App\Models\User;
 use App\Models\UserSetting;
 use Illuminate\Support\Facades\Log;
 

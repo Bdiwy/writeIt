@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $('#username').on('input', function() {
+    $('#name').on('input', function() {
         var value = $(this).val();
         if(value){
             $('.invalid-feedback').remove();
@@ -7,7 +7,7 @@ $(document).ready(function() {
             $("#updateUsreName").text(value);
         }else{
             $(this).addClass('is-invalid');
-            $("#updateUsreName").text("").append("<span style='color:red;'>Username Should Not Be Empty</span>");
+            $("#updateUsreName").text("").append("<span style='color:red;'>Name Should Not Be Empty</span>");
         }
     });
 
