@@ -3,11 +3,13 @@ let createForm   = $(".updateForm");
 let submitButton = $("#submitButton"); 
 createForm.on("submit", function (e) {
         e.preventDefault();
+        let formData = new FormData(this);
         $.ajax({
             method: "POST",
             url: "api/update-settings",
-            data: JSON.stringify(getRequestData()),
-            contentType: "application/json",
+            data: formData,
+            processData: false, 
+            contentType: false, 
             headers: {
                 'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,
             },
@@ -40,13 +42,6 @@ createForm.on("submit", function (e) {
             },
         });
     });
-
-function getRequestData() {
-        return {
-            name: $('#name').val(),
-            email: $('#email').val(),
-        };
-    }
 
 function showModalWithMessage(ModalId , MessageElementById , Message){
         $(MessageElementById).text(Message);

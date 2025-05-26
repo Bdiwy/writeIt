@@ -12,18 +12,18 @@
                         <h3 class="mb-0">Account Details</h3>
                     </div>
                     <div class="card-body text-center">
-                        <img src="{{Auth::user()->avatar_url}}" class="rounded-circle mb-3" alt="Profile Avatar" style="width: 100px; height: 100px;">
+                        <img src="{{auth()->user()->avatar_url}}" class="rounded-circle mb-3" alt="Profile Avatar" style="width: 100px; height: 100px;">
                         <div class="d-flex justify-content-center">
                             <strong>Username:&nbsp;</strong>
-                            <p id="updateUsreName"> {{Auth::user()->name}}</p>
+                            <p id="updateUsreName"> {{auth()->user()->name}}</p>
                         </div>
                         <div class="d-flex justify-content-center">
                                 <strong>Email:&nbsp;</strong>
-                                <p id="updateEmail"> {{Auth::user()->email}}</p>
+                                <p id="updateEmail"> {{auth()->user()->email}}</p>
                         </div>
                         <div class="d-flex justify-content-center">
                                 <strong>Joined:&nbsp;</strong>
-                                <p> {{Auth::user()->created_at->format("Y m d")}}</p>
+                                <p> {{auth()->user()->created_at->format("Y m d")}}</p>
                         </div>                        
                     </div>
                 </div>

@@ -23,6 +23,7 @@ class UpdateSettingRequest extends FormRequest
         return [
             'email' => 'required|email|unique:users',
             'name' => 'required',
+            'avatar' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ];
     }
 }

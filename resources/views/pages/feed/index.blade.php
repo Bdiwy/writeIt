@@ -10,9 +10,9 @@
             <div class="card mb-4">
                 <div class="card-body">
                     <div class="d-flex mb-3">
-                        <img src="{{Auth::user()->avatar_url}}" class="profile-img me-3">
+                        <img src="{{auth()->user()->avatar_url}}" class="profile-img me-3">
                         <button class="create-post-btn" data-bs-toggle="modal" data-bs-target="#createPostModal">
-                            What's on your mind, {{Auth::user()->name}}?
+                            What's on your mind, {{auth()->user()->name}}?
                         </button>
                     </div>
                     <hr class="my-2">

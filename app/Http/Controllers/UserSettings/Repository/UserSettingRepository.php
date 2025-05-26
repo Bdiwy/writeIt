@@ -24,13 +24,19 @@ class UserSettingRepository
 
     public function updateSettings (array $data):bool
     {
-        $userSetting = User::findOrfail($data['user_id']);
+        $user = User::findOrFail($data['user_id']);
+
+        $user->update([
+            'name' => $data['name'],
+            'email' => $data['email'],
+        ]);
+
+        $userSetting = $user->settings; 
         if ($userSetting) {
             $userSetting->update([
-                "name"=>$data['name'],
-                "email"=>$data['email'],
+                'avatar' => $data['avatar'],
             ]);
         }
-        return $userSetting ? true : false;
+        return true;
     }
 }

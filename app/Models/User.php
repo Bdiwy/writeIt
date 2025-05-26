@@ -69,10 +69,16 @@ class User extends Authenticatable
         return $this->settings->avatar ?? 'default.png';
     }
 
+
     public function getAvatarUrlAttribute()
     {
-        return asset('imgs/avatar/' . $this->avatar);
+        if (preg_match('/^([1-9]|1[0-2])\.jpg$/', $this->avatar)) {
+            return asset('imgs/avatar/' . $this->avatar);
+        }
+
+        return asset('storage/' . $this->avatar);
     }
+
 
     public function getGenderAttribute()
     {

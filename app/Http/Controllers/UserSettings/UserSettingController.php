@@ -40,13 +40,20 @@ class UserSettingController extends Controller
     public function updateSettings(UpdateSettingRequest $request)
     {
         $user = auth()->user();
+        
         if (!$user) {
             return response()->json(['error' => 'Unauthorized'], 401);
         }
+        
+        if ($request->hasFile('avatar')) {
+            $avatarPath = $this->userSettingService->handleImage($request);
+        }
+
         $data = [
             'user_id' => $user->id,
             'name' => $request->input('name'),
             'email' => $request->input('email'),
+            'avatar' => $avatarPath ?? Null,
         ];
         $result = $this->userSettingService->updateSettings($data);
         return $result ; 
