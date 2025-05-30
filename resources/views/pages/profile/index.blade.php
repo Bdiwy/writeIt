@@ -43,6 +43,7 @@
             </div>
         </div>
 
+        {{-- we will work withg this for tomowre or this weak --}}
         <!-- User's Blog Posts -->
         <h1 class="mb-4 text-center">{{auth()->user()->name}}'s Posts</h1>
         <div class="row">
