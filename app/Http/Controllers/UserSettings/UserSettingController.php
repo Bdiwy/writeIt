@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\UserSettings\Services\UserSettingService;
 use App\Http\Controllers\UserSettings\Requests\UpdateSettingRequest;
+use Illuminate\Http\Request;
 
 class UserSettingController extends Controller
 {
