@@ -24,4 +24,9 @@ class UserController extends Controller
     {
         return view("pages.profile.index");
     }
+
+    public function showFrinds()
+    {
+        return view("pages.friends.index");
+    }
 }
