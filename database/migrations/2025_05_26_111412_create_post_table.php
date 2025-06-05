@@ -11,10 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('posts', function (Blueprint $table) {
+        Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->enum('status', ['p', 'o','f']);
+            $table->string('body');
+            $table->string('image')->nullable();
+            $table->string('video')->nullable();
             $table->json('hastags')->nullable();
         });
     }
