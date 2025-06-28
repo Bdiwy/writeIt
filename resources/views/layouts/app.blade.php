@@ -50,8 +50,9 @@
     <!-- Bootstrap JS -->
     <script src="{{asset("lib/js/bootstrap.bundle.min.js")}}"></script>
     <script src="{{asset("lib/js/jquery-3.6.0.min.js")}}"></script>
-    @vite(['resources/js/app.js'])
-    <!-- Custom Scripts -->
+    @env(['local', 'production'])
+        @vite(['resources/js/app.js', 'resources/css/app.css'])
+    @endenv    <!-- Custom Scripts -->
     @yield('scripts')
 </body>
 </html>
