@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Middleware\EnsureProfileIsComplete;
 use App\Http\Controllers\Explore\ExploreController;
+use App\Http\Controllers\Post\PostController;
 
 // Public or Feed Page at '/'
 Route::get('/', function () {
@@ -40,6 +41,7 @@ Route::controller(ExploreController::class)->middleware('auth')->group(function 
         ->name('show.showExplore');
 });
 
+Route::post('/posts', [PostController::class, 'store'])->middleware('auth')->name('posts.store');
 
 Route::get('about', function () {
     return view('pages.about.index');
