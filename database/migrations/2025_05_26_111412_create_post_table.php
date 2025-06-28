@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->string('video')->nullable();
             $table->json('hastags')->nullable();
+            $table->json('mentions')->nullable();
+            $table->timestamps();
         });
     }
 
